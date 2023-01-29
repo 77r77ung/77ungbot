@@ -32,6 +32,7 @@ const rest = new REST({ version: '9' }).setToken(token);
         await rest.put(Routes.applicationCommands(clientId), {
             body: commands,
         });
+        //console.log(commands)
         console.log("[Notice] 글로벌 명령어 등록 완료")
     } catch (error) {
         console.error(error);

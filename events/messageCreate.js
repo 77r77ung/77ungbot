@@ -35,6 +35,10 @@ module.exports = {
                 //console.log('출력 중')
                 message.channel.send( {content : `${randommsg[random]}`} )
             }
+
+            if (message.content === "야") {
+                message.channel.send("호 ฅ^•ﻌ•^ฅ")
+            }
         } catch (error){
             console.error(error);
         }
