@@ -5,10 +5,8 @@ module.exports = {
         .setName('주사위')
         .setDescription('주사위를 굴려랑 ฅ^•ﻌ•^ฅ'),
     async execute(interaction) {
-        const dicenum1 = Math.ceil(Math.random() * 6)
-        const dicenum2 = Math.ceil(Math.random() * 6)
-        console.log(dicenum1)
-        console.log(dicenum2)
+        const dicenum1 = Math.ceil(Math.random()*6)
+        const dicenum2 = Math.ceil(Math.random()*6)
         let result = "";
         if (dicenum1 > dicenum2){
             result = "🎉 1번 주자";
