@@ -1,5 +1,4 @@
 const { SlashCommandBuilder } = require('@discordjs/builders');
-const { EmbedBuilder } = require('discord.js');
 const { REST } = require('@discordjs/rest');
 const { Routes } = require('discord-api-types/v9');
 const { clientId, guildIds, token } = require('./config.json');
@@ -18,21 +17,22 @@ for (const file of commandFiles) {
 const rest = new REST({ version: '9' }).setToken(token);
 
 (async () => {
-    guildIds.map(async(guildId) => {
+    guildIds.map(async (guildId) => {
         try{
             await rest.put(Routes.applicationGuildCommands(clientId, guildId), {
                 body: {},
             });
-            console.log(`[Notice] ${guildId} server Success.`); 
+            console.log(`[Notice] ${guildId} server Success.`);
         } catch (error) {
             console.error(error)
         }
     });
+    
     try{
         await rest.put(Routes.applicationCommands(clientId), {
             body: commands,
         });
-        console.log(`[Notice] 글로벌 명령어 등록 성공`)
+        console.log("[Notice] 글로벌 명령어 등록 완료")
     } catch (error) {
         console.error(error);
     }

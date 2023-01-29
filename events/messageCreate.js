@@ -32,7 +32,7 @@ module.exports = {
                 "황준석 바보", "김채연 바보", "최민준 바보", "주태준 바보"]
             const random = Math.floor(Math.random() * randommsg.length)
             if (message.content === "바보") {
-                console.log('출력 중')
+                //console.log('출력 중')
                 message.channel.send( {content : `${randommsg[random]}`} )
             }
         } catch (error){
